@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "darkvslight:block/enchantedlogside",
+    "top": "darkvslight:block/enchantedlogside"
+  }
+}

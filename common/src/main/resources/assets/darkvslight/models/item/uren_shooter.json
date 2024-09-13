@@ -1,0 +1,7 @@
+{
+  "parent": "darkvslight:custom/urenshooter",
+  "textures": {
+    "1": "darkvslight:block/tbow",
+    "particle": "darkvslight:items/textureforbow"
+  }
+}

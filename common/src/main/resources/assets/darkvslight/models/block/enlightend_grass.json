@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/grasssidelight",
+    "up": "darkvslight:block/grasstoplight",
+    "north": "darkvslight:block/grasssidelight",
+    "east": "darkvslight:block/grasssidelight",
+    "south": "darkvslight:block/grasssidelight",
+    "west": "darkvslight:block/grasssidelight",
+    "particle": "darkvslight:block/grasssidelight"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/enchantedlogtop",
+    "up": "darkvslight:block/enchantedlogtop",
+    "north": "darkvslight:block/enchantedlogside",
+    "east": "darkvslight:block/enchantedlogside",
+    "south": "darkvslight:block/enchantedlogside",
+    "west": "darkvslight:block/enchantedlogside",
+    "particle": "darkvslight:block/enchantedlogtop"
+  }
+}

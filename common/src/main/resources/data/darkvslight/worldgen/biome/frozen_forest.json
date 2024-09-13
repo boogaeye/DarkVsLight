@@ -1,0 +1,52 @@
+{
+  "temperature": 0.3,
+  "downfall": 0.5,
+  "precipitation": "snow",
+  "temperature_modifier": "frozen",
+  "creature_spawn_probability": 0,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 37375,
+    "water_color": 2818303,
+    "water_fog_color": 9175295,
+    "grass_color": 0,
+    "foliage_color": 0,
+    "grass_color_modifier": "none",
+    "additions_sound": {
+      "sound": "darkvslight:block.dark-portal.ambient",
+      "tick_chance": 0.01
+    },
+    "music": {
+      "sound": "darkvslight:dark-forest",
+      "min_delay": 0,
+      "max_delay": 0,
+      "replace_current_music": false
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:dust"
+      },
+      "probability": 0.1
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "darkvslight:cave",
+      "darkvslight:cave_extra_underground",
+      "darkvslight:canyon"
+    ],
+    "liquid": [
+      "darkvslight:cave_extra_underground",
+      "darkvslight:canyon",
+      "darkvslight:cave"
+    ]
+  },
+  "features": [
+    [
+      "darkvslight:ore_startile"
+    ]
+
+  ]
+}

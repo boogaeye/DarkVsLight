@@ -1,0 +1,48 @@
+{
+  "type": "darkvslight:darkend",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "darkvslight:darkend",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "darkvslight:frozen_forest",
+          "parameters": {
+            "temperature": 0.05,
+            "humidity": 0.1,
+            "continentalness": 0.2,
+            "erosion": 0.3,
+            "weirdness": 0.6,
+            "depth": 0.1,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "darkvslight:heated_forest",
+          "parameters": {
+            "temperature": 0.2,
+            "humidity": 0.2,
+            "continentalness": 0.15,
+            "erosion": 0.3,
+            "weirdness": 0.4,
+            "depth": 0.1,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "darkvslight:deep_dark",
+          "parameters": {
+            "temperature": 0.4,
+            "humidity": 0.4,
+            "continentalness": 0.3,
+            "erosion": 0.3,
+            "weirdness": 0.3,
+            "depth": 0.1,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

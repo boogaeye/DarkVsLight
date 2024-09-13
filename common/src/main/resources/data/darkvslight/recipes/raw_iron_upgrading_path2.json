@@ -1,0 +1,19 @@
+{
+  "type": "darkvslight:upgrading",
+  "fluid": {
+    "FluidName": "minecraft:lava",
+    "Amount": 10
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:raw_iron"
+    }
+
+  ],
+  "method": "darkvslight.upgrade_block.smelting",
+  "energy": 0,
+  "hardness": 25,
+  "output": {
+    "item": "minecraft:iron_ingot"
+  }
+}

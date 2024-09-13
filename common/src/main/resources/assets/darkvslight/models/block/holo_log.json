@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/holologtop",
+    "up": "darkvslight:block/holologtop",
+    "north": "darkvslight:block/holologsides",
+    "east": "darkvslight:block/holologsides",
+    "south": "darkvslight:block/holologsides",
+    "west": "darkvslight:block/holologsides",
+    "particle": "darkvslight:block/holologtop"
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.jelk.Active": {
+			"loop": true,
+			"animation_length": 4.68,
+			"blend_weight": "2",
+			"bones": {
+				"bone": {
+					"scale": {
+						"0.48": {
+							"vector": [1, 1, 1]
+						},
+						"2.12": {
+							"vector": [0.8, 10, 1],
+							"easing": "easeOutExpo"
+						},
+						"3.12": {
+							"vector": [1, 1, 1],
+							"easing": "easeInExpo"
+						}
+					}
+				}
+			}
+		}
+	}
+}

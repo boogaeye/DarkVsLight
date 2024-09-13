@@ -1,0 +1,32 @@
+{
+  "temperature": 0.2,
+  "downfall": 0.3,
+  "precipitation": "rain",
+  "creature_spawn_probability": 0.1,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 0,
+    "water_color": 0,
+    "water_fog_color": 0
+  },
+  "spawners": {},
+  "spawn_costs": {
+    "minecraft:warden": {
+      "energy_budget": 0.12,
+      "charge": 1
+    }
+  },
+  "carvers": {
+    "air": [
+      "darkvslight:cave",
+      "darkvslight:cave_extra_underground",
+      "darkvslight:canyon"
+    ]
+  },
+  "features": [
+    [
+      "minecraft:sculk_patch_deep_dark",
+      "minecraft:sculk_vein"
+    ]
+  ]
+}

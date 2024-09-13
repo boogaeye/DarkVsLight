@@ -1,0 +1,8 @@
+{
+  "parent": "darkvslight:custom/xpgrinder",
+  "textures": {
+    "all": "darkvslight:block/xpgrinder",
+    "particle": "darkvslight:block/xpgrinder",
+    "0": "darkvslight:block/realxpgrinder"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "darkvslight:block/basaltdarkstone",
+    "top": "darkvslight:block/basaltdarkstone",
+    "side": "darkvslight:block/basaltdarkstone"
+  }
+}

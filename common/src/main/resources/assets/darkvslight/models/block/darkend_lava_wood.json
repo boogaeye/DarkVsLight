@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/darklavawoodtop",
+    "up": "darkvslight:block/darklavawoodtop",
+    "north": "darkvslight:block/darklavawoodside",
+    "east": "darkvslight:block/darklavawoodside",
+    "south": "darkvslight:block/darklavawoodside",
+    "west": "darkvslight:block/darklavawoodside",
+    "particle": "darkvslight:block/darklavawoodtop"
+  }
+}

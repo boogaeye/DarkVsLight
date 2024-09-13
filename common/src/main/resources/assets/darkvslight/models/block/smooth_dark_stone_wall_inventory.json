@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "darkvslight:block/new_smoothdarkstone",
+    "particle": "darkvslight:block/new_smoothdarkstone"
+  }
+}

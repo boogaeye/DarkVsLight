@@ -1,0 +1,7 @@
+{
+  "parent": "darkvslight:custom/burndiamondsword",
+  "textures": {
+    "0": "darkvslight:block/bdiamondsword",
+    "particle": "darkvslight:items/bdiamondsword"
+  }
+}

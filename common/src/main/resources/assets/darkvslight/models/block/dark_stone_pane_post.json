@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glass_pane_post",
+  "textures": {
+    "edge": "darkvslight:block/new_smoothdarkstone",
+    "pane": "darkvslight:block/darkstonepane"
+  }
+}

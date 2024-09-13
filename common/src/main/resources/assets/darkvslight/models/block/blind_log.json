@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/blindlogtop",
+    "up": "darkvslight:block/blindlogtop",
+    "north": "darkvslight:block/blindloganim",
+    "east": "darkvslight:block/blindloganim",
+    "south": "darkvslight:block/blindloganim",
+    "west": "darkvslight:block/blindloganim",
+    "particle": "darkvslight:block/blindlogtop"
+  }
+}

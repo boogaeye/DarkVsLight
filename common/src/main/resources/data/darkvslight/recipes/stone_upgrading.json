@@ -1,0 +1,19 @@
+{
+  "type": "darkvslight:upgrading",
+  "fluid": {
+    "FluidName": "minecraft:water",
+    "Amount": 1000
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    }
+
+  ],
+  "method": "darkvslight.upgrade_block.deepmining",
+  "energy": 32,
+  "hardness": 50,
+  "output": {
+    "item": "minecraft:raw_iron"
+  }
+}

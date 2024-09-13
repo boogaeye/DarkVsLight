@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkvslight:block/smooth_dark_stone_slab"
+    },
+    "type=top": {
+      "model": "darkvslight:block/smooth_dark_stone_slab_top"
+    },
+    "type=double": {
+      "model": "darkvslight:block/smooth_dark_stone_slab_full"
+    }
+  }
+}

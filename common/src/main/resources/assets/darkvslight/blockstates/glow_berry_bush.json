@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=1": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=2": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=3": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=4": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=5": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=6": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=7": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=8": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=9": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=10": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=11": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=12": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=13": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=14": {
+      "model": "darkvslight:block/glow_berry_bush"
+    },
+    "age=15": {
+      "model": "darkvslight:block/glow_berry_bush"
+    }
+  }
+}

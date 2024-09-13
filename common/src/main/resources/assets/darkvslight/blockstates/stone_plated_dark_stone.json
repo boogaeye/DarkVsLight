@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "darkvslight:block/stone_plated_dark_stone"
+    }
+  }
+}

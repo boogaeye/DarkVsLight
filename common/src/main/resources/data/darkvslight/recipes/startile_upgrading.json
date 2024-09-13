@@ -1,0 +1,19 @@
+{
+  "type": "darkvslight:upgrading",
+  "fluid": {
+    "FluidName": "minecraft:water",
+    "Amount": 3000
+  },
+  "ingredients": [
+    {
+      "item": "darkvslight:rawstartile"
+    }
+
+  ],
+  "method": "darkvslight.upgrade_block.crystallize",
+  "energy": 32,
+  "hardness": 400,
+  "output": {
+    "item": "darkvslight:startilegem"
+  }
+}

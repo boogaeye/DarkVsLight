@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/burnorelightend_ore_block",
+    "up": "darkvslight:block/burnorelightend_ore_block",
+    "north": "darkvslight:block/burnorelightend_ore_block",
+    "east": "darkvslight:block/burnorelightend_ore_block",
+    "south": "darkvslight:block/burnorelightend_ore_block",
+    "west": "darkvslight:block/burnorelightend_ore_block",
+    "particle": "darkvslight:block/burnorelightend_ore_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "darkvslight:block/darkend_enchanter"
+    },
+    "facing=east": {
+      "model": "darkvslight:block/darkend_enchanter",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "darkvslight:block/darkend_enchanter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "darkvslight:block/darkend_enchanter",
+      "y": 270
+    }
+  }
+}

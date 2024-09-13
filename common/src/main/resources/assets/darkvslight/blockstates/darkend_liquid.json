@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "":
+    {
+      "model": "darkvslight:block/darkend_liquid"
+    }
+  }
+}

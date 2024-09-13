@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/nether_portal_ew",
+  "textures": {
+    "particle": "darkvslight:block/portalframe",
+    "portal": "darkvslight:block/portalframe"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "darkvslight:block/topburngazewood",
+    "up": "darkvslight:block/topburngazewood",
+    "north": "darkvslight:block/sideburngazewood",
+    "east": "darkvslight:block/sideburngazewood",
+    "south": "darkvslight:block/sideburngazewood",
+    "west": "darkvslight:block/sideburngazewood",
+    "particle": "darkvslight:block/topburngazewood"
+  }
+}

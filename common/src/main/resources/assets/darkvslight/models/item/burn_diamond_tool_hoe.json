@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "darkvslight:items/burn_diamond_tool_hoe"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "darkvslight:block/darkend_portal_ew"
+    },
+    "axis=x": {
+      "model": "darkvslight:block/darkend_portal_ns"
+    }
+  }
+}

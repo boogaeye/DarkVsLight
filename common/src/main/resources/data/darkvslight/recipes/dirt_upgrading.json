@@ -1,0 +1,19 @@
+{
+  "type": "darkvslight:upgrading",
+  "fluid": {
+    "FluidName": "minecraft:water",
+    "Amount": 100
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    }
+
+  ],
+  "method": "darkvslight.upgrade_block.rematerialize",
+  "energy": 2,
+  "hardness": 200,
+  "output": {
+    "item": "minecraft:stone"
+  }
+}

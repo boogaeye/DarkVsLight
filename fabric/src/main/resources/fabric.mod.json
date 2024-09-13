@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "darkvslight",
+  "version": "${version}",
+
+  "name": "Dark Vs Light",
+  "description": "Dark Vs Light Mod",
+  "authors": [],
+  "contact": {},
+
+  "license": "All Rights Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.faz.dvlmultiload.fabric.DarkVsLightFabric"
+    ]
+  },
+  "mixins": [
+    "dvl.mixins.json",
+    "dvl-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.19.2",
+    "architectury": ">=6.6.92"
+  }
+}

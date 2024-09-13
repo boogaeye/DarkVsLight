@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=north,lit=false,cooldown=false": {
+      "model": "darkvslight:block/upgradeblocktier1unlit"
+    },
+    "facing=east,lit=false,cooldown=false": {
+      "model": "darkvslight:block/upgradeblocktier1unlit",
+      "y": 90
+    },
+    "facing=south,lit=false,cooldown=false": {
+      "model": "darkvslight:block/upgradeblocktier1unlit",
+      "y": 180
+    },
+    "facing=west,lit=false,cooldown=true": {
+      "model": "darkvslight:block/upgradeblocktier1burnt",
+      "y": 270
+    },
+    "facing=north,lit=false,cooldown=true": {
+      "model": "darkvslight:block/upgradeblocktier1burnt"
+    },
+    "facing=east,lit=false,cooldown=true": {
+      "model": "darkvslight:block/upgradeblocktier1burnt",
+      "y": 90
+    },
+    "facing=south,lit=false,cooldown=true": {
+      "model": "darkvslight:block/upgradeblocktier1burnt",
+      "y": 180
+    },
+    "facing=west,lit=false,cooldown=false": {
+      "model": "darkvslight:block/upgradeblocktier1unlit",
+      "y": 270
+    },
+    "facing=north,lit=true": {
+      "model": "darkvslight:block/upgradeblocktier1lit"
+    },
+    "facing=east,lit=true": {
+      "model": "darkvslight:block/upgradeblocktier1lit",
+      "y": 90
+    },
+    "facing=south,lit=true": {
+      "model": "darkvslight:block/upgradeblocktier1lit",
+      "y": 180
+    },
+    "facing=west,lit=true": {
+      "model": "darkvslight:block/upgradeblocktier1lit",
+      "y": 270
+    }
+  }
+}

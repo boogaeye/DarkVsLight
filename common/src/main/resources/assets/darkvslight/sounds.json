@@ -1,0 +1,733 @@
+{
+  "upgrade": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:upgrade1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:upgrade2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:upgrade3",
+        "stream": false
+      }
+    ]
+  },
+  "entity.darkend-worm.disturbed": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:wormdisturbed1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:wormdisturbed2",
+        "stream": false
+      }
+    ]
+  },
+  "entity.darkend-worm.anger": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:wormangy",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:wormangy2",
+        "stream": false
+      }
+    ]
+  },
+  "dstonebreak": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:dstonebreak",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:dstonebreak2",
+        "stream": false
+      }
+    ]
+  },
+  "trader": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "darkvslight:trader",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:trader2",
+        "stream": false
+      }
+    ]
+  },
+  "entity.darkend-biter.ambient": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:darkendtallend",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendtallend2",
+        "stream": false
+      }
+    ]
+  },
+  "entity.darkend-biter.hurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:darkendtallendhurt",
+        "stream": false
+      }
+    ]
+  },
+  "block.upgrade.prestart": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:upgradeprestart",
+        "stream": false
+      }
+    ]
+  },
+  "block.upgrade.start": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:upgradestart",
+        "stream": false
+      }
+    ]
+  },
+  "block.upgrade.loop": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:upgradeloop",
+        "stream": false
+      }
+    ]
+  },
+  "block.upgrade.end": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:upgradeend",
+        "stream": false
+      }
+    ]
+  },
+  "tracker": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__tracker1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__tracker2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__tracker3",
+        "stream": false
+      }
+    ]
+  },
+  "trackercrafted": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__trackercrafted1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackercrafted2",
+        "stream": false
+      }
+    ]
+  },
+  "trackerdeny": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny5",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny6",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdeny7",
+        "stream": false
+      }
+    ]
+  },
+  "trackerdrop": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__trackerdropped1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdropped2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdropped3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerdropped4",
+        "stream": false
+      }
+    ]
+  },
+  "trackerfound": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__trackerfound1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound5",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound6",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound7",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__trackerfound8",
+        "stream": false
+      }
+    ]
+  },
+  "bosshurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__bosshurt",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bosshurt2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bosshurt3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bosshurt4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bosshurt5",
+        "stream": false
+      }
+    ]
+  },
+  "bossidle": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__bossidle",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bossidle2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bossidle3",
+        "stream": false
+      }
+    ]
+  },
+  "bossspell": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__bossspell",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bossspell2",
+        "stream": false
+      }
+    ]
+  },
+  "bosswalk": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "darkvslight:anyconv.com__bosswalk1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:anyconv.com__bosswalk2",
+        "stream": false
+      }
+    ]
+  },
+  "waterfill": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:waterfill1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:waterfill2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:waterfill3",
+        "stream": false
+      }
+    ]
+  },
+  "hornstomp": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "darkvslight:hornstomp",
+        "stream": false
+      }
+    ]
+  },
+  "hornambient": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:hornsound1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:hornsound2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:hornsound3",
+        "stream": false
+      }
+    ]
+  },
+  "hornhurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:hornhurt1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:hornhurt2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:hornhurt3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:hornhurt4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:hornhurt5",
+        "stream": false
+      }
+    ]
+  },
+  "dloner": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:dloner1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:dloner2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:dloner3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:dloner4",
+        "stream": false
+      }
+    ]
+  },
+  "dlonerhurt": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "darkvslight:dlonerhurt1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:dlonerhurt2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:dlonerhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "darkendwolfam": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:darkendwolfambient1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendwolfambient2",
+        "stream": false
+      }
+    ]
+  },
+  "darkenddessertambient": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:darkenddessertambient",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkenddessertambient2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkenddessertambient3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkenddessertambient4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkenddessertambient5",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkenddessertambient6",
+        "stream": false
+      }
+    ]
+  },
+  "dfloater": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:darkendfloater1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloater2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloater3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloater4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloater5",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloater6",
+        "stream": false
+      }
+    ]
+  },
+  "dfloaterhurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:darkendfloaterhurt",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloaterhurt1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloaterhurt2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:darkendfloaterhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "bdiamond": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:bdiamond1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:bdiamond2",
+        "stream": false
+      }
+    ]
+  },
+  "shadowarmor": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "darkvslight:shadowarmor1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:shadowarmor2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:shadowarmor3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:shadowarmor4",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:shadowarmor5",
+        "stream": false
+      }
+    ]
+  },
+  "burngazeforest": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:burngazeforest",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:burngazeforest2",
+        "stream": false
+      }
+    ]
+  },
+  "blindforest": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:blindforest1",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:blindforest2",
+        "stream": false
+      }
+    ]
+  },
+  "hornsong": {
+    "category": "record",
+    "subtitle": "subtitles.hornsong",
+    "sounds": [
+      {
+        "name": "darkvslight:darkhornsong",
+        "stream": true
+      }
+    ]
+  },
+  "drag": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:bossdragin",
+        "stream": false
+      }
+    ]
+  },
+  "burnforestambient": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:burnforestambient",
+        "stream": false
+      }
+    ]
+  },
+  "burngazeadditions": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:burngazeadditions",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:burngazeadditions2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:burngazeadditions3",
+        "stream": false
+      }
+    ]
+  },
+  "burnforestmood": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:burnforestmood",
+        "stream": false
+      }
+    ]
+  },
+  "enlightendspider": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:enlightendspider1.ogg",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:enlightendspider2",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:enlightendspider3",
+        "stream": false
+      },
+      {
+        "name": "darkvslight:enlightendspider4",
+        "stream": false
+      }
+    ]
+  },
+  "enchantedloop": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:enchantedloop",
+        "stream": false
+      }
+    ]
+  },
+  "enlightendspiderhurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "darkvslight:enlightendspiderhurt1",
+        "stream": false
+      }
+    ]
+  },
+  "block.dark-portal.ambient": {
+    "subtitle": "subtitles.darkvslight.block.dark-portal.ambient",
+    "sounds": [
+        "darkvslight:darkportal"
+    ]
+  },
+  "darkforest": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "darkvslight:dark-forest",
+        "stream": true
+      }
+    ]
+  },
+  "apocalypse": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:sound-effects-library-apocalypse",
+        "stream": false
+      }
+    ]
+  },
+  "theswamp": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "darkvslight:loyalty_freak_music_-_08_-_the_swamp",
+        "stream": false
+      }
+    ]
+  },
+  "lovehim": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "darkvslight:loyalty_freak_music_-_03_-_love_him",
+        "stream": true
+      }
+    ]
+  },
+  "oceanending": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "darkvslight:soft_and_furious_-_07_-_ocean_ending",
+        "stream": true
+      }
+    ]
+  },
+  "breakdarkgrass": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "darkvslight:darkgrassbreak",
+        "stream": false
+      }
+    ]
+  }
+}

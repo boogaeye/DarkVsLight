@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "darkvslight:block/basaltdarkstone",
+    "particle": "darkvslight:block/basaltdarkstone"
+  }
+}
