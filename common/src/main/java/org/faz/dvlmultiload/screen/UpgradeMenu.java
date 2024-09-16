@@ -27,7 +27,6 @@ public class UpgradeMenu extends AbstractContainerMenu
     public UpgradeMenu(int id, Inventory inv, FriendlyByteBuf by)
     {
         this(id, inv, inv.player.level.getBlockEntity(by.readBlockPos()), new SimpleContainerData(3));
-        System.out.println("UpgradeMenu: UpgradeMenu(int id, Inventory inv, FriendlyByteBuf by)");
     }
 
     public UpgradeMenu(int id, Inventory inv, BlockEntity entity, ContainerData data)
@@ -61,7 +60,6 @@ public class UpgradeMenu extends AbstractContainerMenu
         //});
 
         addDataSlots(data);
-        System.out.println("UpgradeMenu: UpgradeMenu(int id, Inventory inv, BlockEntity entity, ContainerData data)");
     }
 
     public boolean hasEnergy(boolean initial)
@@ -163,7 +161,8 @@ public class UpgradeMenu extends AbstractContainerMenu
     }
 
     @Override
-    public boolean stillValid(Player ply) {
+    public boolean stillValid(Player ply)
+    {
         return stillValid(ContainerLevelAccess.create(level, upgradeBlockEntity.getBlockPos()), ply, ModBlocks.UPGRADE_BLOCK.block.get());
     }
 

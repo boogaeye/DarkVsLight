@@ -42,12 +42,12 @@ public class DvlItemSlot extends Slot
     @Override
     public boolean mayPickup(Player player)
     {
-        return !handler.getSlot(slot).isEmpty();
+        return !handler.shrinkSlot(slot, 1, true).isEmpty();
     }
 
     @Override
     public ItemStack remove(int amount)
     {
-        return handler.getSlot(slot);
+        return handler.shrinkSlot(slot, amount, false);
     }
 }

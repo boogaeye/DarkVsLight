@@ -9,7 +9,7 @@ modLoader="javafml" #mandatory
 loaderVersion="[43,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="All Rights Reserved"
+license="GNU GENERAL PUBLIC LICENSE Version 3"
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="http://my.issue.tracker/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -63,4 +63,16 @@ Dark Vs Light Mod
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
    versionRange="[1.19.2,1.20)"
    ordering="NONE"
+   side="BOTH"
+[[dependencies.darkvslight]]
+   modId="architectury"
+   mandatory=true
+   versionRange="[6.6.92,)"
+   ordering="NONE"
+   side="BOTH"
+[[dependencies.darkvslight]]
+   modId="patchouli"
+   mandatory=false
+   versionRange="[1.19.2-77,)"
+   ordering="BEFORE"
    side="BOTH"

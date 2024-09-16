@@ -3,6 +3,7 @@ package org.faz.dvlmultiload.utils;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class DvlItemHandler
@@ -27,6 +28,68 @@ public class DvlItemHandler
     public void setSlot(int slot, ItemStack stack)
     {
         this.stacks.set(slot, stack);
+    }
+
+    public ItemStack shrinkSlot(int slot, int amount, boolean virtual)
+    {
+        if (amount == 0)
+            return ItemStack.EMPTY;
+        ItemStack stack = this.stacks.get(slot);
+        ItemStack alteredStack = stack.copy();
+        if (stack.isEmpty())
+            return ItemStack.EMPTY;
+
+        int shrinkAmount = Math.min(amount, stack.getCount());
+
+        if (stack.getCount() <= shrinkAmount)
+        {
+            if (!virtual)
+            {
+                this.stacks.set(slot, ItemStack.EMPTY);
+                return stack;
+            }
+            return stack.copy();
+        }
+        if (!virtual)
+        {
+            alteredStack.setCount(stack.getCount() - shrinkAmount);
+            setSlot(slot, alteredStack);
+        }
+        ItemStack result = stack.copy();
+        result.setCount(shrinkAmount);
+        return result;
+    }
+
+    public ItemStack growSlot(int slot, ItemStack stack, boolean virtual)
+    {
+        if (stack.isEmpty())
+            return ItemStack.EMPTY;
+        ItemStack slotStack = this.stacks.get(slot);
+        ItemStack alteredStack = stack.copy();
+
+        if (slotStack.isEmpty())
+        {
+            if (!virtual)
+            {
+                setSlot(slot, stack);
+            }
+            return ItemStack.EMPTY;
+        }
+        if (ItemStack.isSame(slotStack, stack) && ItemStack.tagMatches(slotStack, stack))
+        {
+            int growAmount = Math.min(stack.getCount(), slotStack.getMaxStackSize() - slotStack.getCount());
+            if (growAmount <= 0)
+                return stack;
+            if (!virtual)
+            {
+                alteredStack.setCount(stack.getCount() + growAmount);
+                setSlot(slot, slotStack);
+            }
+            ItemStack result = stack.copy();
+            result.setCount(growAmount);
+            return result;
+        }
+        return stack;
     }
 
     public CompoundTag serialize()

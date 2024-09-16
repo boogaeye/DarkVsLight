@@ -1,11 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.faz.dvlmultiload.mixin.forge",
+  "package": "org.faz.dvlmultiload.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
+    "PlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
