@@ -28,7 +28,7 @@ public class ModBlocks
     //
 
     // Burn Stuff Rename!!!! LEGACY
-    public static final DoubleRegister<Block, BlockItem> BURN_GAZE_WOOD = DoubleRegister.createItemFromBlock("burn_gaze_wood", () -> new Block(Block.Properties.of(Material.WOOD)));
+    public static final DoubleRegister<Block, BlockItem> BURN_GAZE_WOOD = DoubleRegister.createItemFromBlock("burn_gaze_wood", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD))); // need logs
     public static final DoubleRegister<Block, BlockItem> BURN_PANE = DoubleRegister.createItemFromBlock("burn_pane", () -> new Block(Block.Properties.of(Material.GLASS)));
     public static final DoubleRegister<Block, BlockItem> BURN_ORE = DoubleRegister.createItemFromBlock("burn_ore", () -> new Block(Block.Properties.of(Material.STONE).requiresCorrectToolForDrops()));
     public static final DoubleRegister<Block, BlockItem> BURN_ORE_SURFACE = DoubleRegister.createItemFromBlock("burn_ore_surface", () -> new Block(Block.Properties.of(Material.STONE).requiresCorrectToolForDrops())); // May Rework
@@ -39,7 +39,7 @@ public class ModBlocks
     // Blind Stuff Rename!!!! LEGACY
     public static final DoubleRegister<Block, BlockItem> BLIND_ORE = DoubleRegister.createItemFromBlock("blind_ore", () -> new Block(Block.Properties.of(Material.GLASS)));
     public static final DoubleRegister<Block, BlockItem> BLIND_STONE = DoubleRegister.createItemFromBlock("blind_stone", () -> new Block(Block.Properties.of(Material.GLASS)));
-    public static final DoubleRegister<Block, BlockItem> BLIND_LOG = DoubleRegister.createItemFromBlock("blind_log", () -> new Block(Block.Properties.of(Material.WOOD)));
+    public static final DoubleRegister<Block, BlockItem> BLIND_LOG = DoubleRegister.createItemFromBlock("blind_log", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD)));
     public static final DoubleRegister<Block, BlockItem> BLIND_LEAVES = DoubleRegister.createItemFromBlock("blind_leaves", () -> new Block(Block.Properties.of(Material.PLANT)));
     public static final DoubleRegister<Block, BlockItem> BLIND_PLANKS = DoubleRegister.createItemFromBlock("blind_planks", () -> new Block(Block.Properties.of(Material.WOOD)));
     //
@@ -49,7 +49,7 @@ public class ModBlocks
     //
 
     // Glow Stuff Rename!!!! LEGACY
-    public static final DoubleRegister<Block, BlockItem> GLOW_LOG = DoubleRegister.createItemFromBlock("glow_log", () -> new Block(Block.Properties.of(Material.WOOD)));
+    public static final DoubleRegister<Block, BlockItem> GLOW_LOG = DoubleRegister.createItemFromBlock("glow_log", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD)));
     public static final DoubleRegister<Block, BlockItem> GLOW_LEAVES = DoubleRegister.createItemFromBlock("glow_leaves", () -> new Block(Block.Properties.of(Material.PLANT)));
     public static final DoubleRegister<Block, BlockItem> GLOW_PLANKS = DoubleRegister.createItemFromBlock("glow_planks", () -> new Block(Block.Properties.of(Material.WOOD)));
     public static final DoubleRegister<Block, BlockItem> GLOW_SAPLING = DoubleRegister.createItemFromBlock("glow_sapling", () -> new SaplingBlock(new AbstractMegaTreeGrower() {
@@ -66,18 +66,14 @@ public class ModBlocks
         }
     }, Block.Properties.of(Material.STONE).requiresCorrectToolForDrops())); // implement sapling
 
-    public static final DoubleRegister<Block, BlockItem> GLOWING_FRUIT = DoubleRegister.createItemFromBlock("glowing_fruit", () -> new CropBlock(Block.Properties.of(Material.PLANT)));
+    public static final DoubleRegister<Block, BlockItem> GLOWING_FRUIT = DoubleRegister.createItemFromBlock("glowing_fruit", () -> new Block(Block.Properties.of(Material.PLANT)));
 
     public static final DoubleRegister<Block, BlockItem> GLOW_LOG_DOOR = DoubleRegister.createItemFromBlock("glow_log_door", () -> new DoorBlock(Block.Properties.of(Material.WOOD)));
-    public static final DoubleRegister<Block, BlockItem> GLOW_BERRY_BUSH = DoubleRegister.createItemFromBlock("glow_berry_bush", () -> new CropBlock(Block.Properties.of(Material.WOOD)));
+    public static final DoubleRegister<Block, BlockItem> GLOW_BERRY_BUSH = DoubleRegister.createItemFromBlock("glow_berry_bush", () -> new Block(Block.Properties.of(Material.WOOD)));
     //
 
     // Upgrade Blocks
-    public static final DoubleRegister<Block, BlockItem> UPGRADE_BLOCK = DoubleRegister.createItemFromBlock("upgrade_block", () -> new UpgradeBlock(1));
-    public static final DoubleRegister<Block, BlockItem> UPGRADE_BLOCKT2 = DoubleRegister.createItemFromBlock("upgrade_blockt2", () -> new UpgradeBlock(2));
-    public static final DoubleRegister<Block, BlockItem> UPGRADE_BLOCKT3 = DoubleRegister.createItemFromBlock("upgrade_blockt3", () -> new UpgradeBlock(3));
-    public static final DoubleRegister<Block, BlockItem> UPGRADE_BLOCKT4 = DoubleRegister.createItemFromBlock("upgrade_blockt4", () -> new UpgradeBlock(4));
-    public static final DoubleRegister<Block, BlockItem> UPGRADE_BLOCKT5 = DoubleRegister.createItemFromBlock("upgrade_blockt5", () -> new UpgradeBlock(5));
+    public static final DoubleRegister<Block, BlockItem> UPGRADE_BLOCK = DoubleRegister.createItemFromBlock("upgrade_block", UpgradeBlock::new);
     //
 
     // MISC rework most likely

@@ -1,11 +1,18 @@
 package org.faz.dvlmultiload.blockentities;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import dev.architectury.fluid.FluidStack;
+import dev.architectury.networking.NetworkManager;
+import io.netty.buffer.Unpooled;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -18,24 +25,32 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.AABB;
 import org.faz.dvlmultiload.Factory.FactoryManager;
 import org.faz.dvlmultiload.Factory.IFluidTank;
 import org.faz.dvlmultiload.block.UpgradeBlock;
+import org.faz.dvlmultiload.network.FluidSyncS2CPacket;
+import org.faz.dvlmultiload.network.MethodReasonS2CPacket;
 import org.faz.dvlmultiload.recipetype.UpgradeBlockRecipe;
 import org.faz.dvlmultiload.registers.ModBlockEntities;
+import org.faz.dvlmultiload.registers.ModBlocks;
+import org.faz.dvlmultiload.registers.ModPackets;
 import org.faz.dvlmultiload.registers.ModSounds;
 import org.faz.dvlmultiload.screen.UpgradeMenu;
 import org.faz.dvlmultiload.utils.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 import static net.minecraft.world.Containers.dropContents;
@@ -54,7 +69,7 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
 
     private final IFluidTank tank;
 
-    private final DvlEnergyStorage energyStorage = new DvlEnergyStorage(); // not complete
+    private final DvlEnergyStorage energyStorage = new DvlEnergyStorage(60000, 256); // not complete
 
     private String methodReason = "darkvslight.upgrade_block.NAMR";
 
@@ -96,7 +111,11 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
         tank.addListener(() ->
         {
             setChanged();
-            // Sync Mod Messages
+            FluidSyncS2CPacket packet = new FluidSyncS2CPacket(tank.getFluid(), blockPos);
+            FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+            packet.encode(buf);
+            Iterable<ServerPlayer> players = level.getEntitiesOfClass(ServerPlayer.class, new AABB(blockPos).inflate(15));
+            NetworkManager.sendToPlayers(players, ModPackets.SYNC_FLUIDS, buf);
         });
         data = new ContainerData()
         {
@@ -136,14 +155,20 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
             return;
         }
 
-        System.out.println(tank.getFluidAmount());
+        int cooldownTicks = (getBlockState().getValue(UpgradeBlock.TIER) == 5) ? 0 : (Math.max(maxProgress, (120 / getBlockState().getValue(UpgradeBlock.TIER))) / getBlockState().getValue(UpgradeBlock.TIER));
+
+        if (inventory.getSlot(1).getItem() == Items.WATER_BUCKET)
+        {
+            energyStorage.receiveEnergy(128, false);
+        }
 
         // Test transfer power
         if (hasCooldown())
         {
-            if (cooldown == (Math.max(maxProgress, (120 / ((UpgradeBlock)getBlockState().getBlock()).getTier())) / ((UpgradeBlock)getBlockState().getBlock()).getTier()))
+            if (cooldown == cooldownTicks)
             {
                 level.playSound(null, getBlockPos(), ModSounds.UpgradeStart.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, getBlockPos(), SoundEvents.FIRE_AMBIENT, SoundSource.BLOCKS, 1.0F, 1.0F);
                 state = state.setValue(UpgradeBlock.COOLDOWN, true).setValue(UpgradeBlock.LIT, false);
                 level.setBlockAndUpdate(worldPosition, state);
                 level.playSound(null, getBlockPos(), ModSounds.UpgradeEnd.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -180,8 +205,10 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
             if (progress >= maxProgress)
             {
                 engageItem();
-                ticksRunning = 0;
-                cooldown = (((UpgradeBlock)getBlockState().getBlock()).getTier() == 5) ? 0 : (Math.max(maxProgress, (120 / ((UpgradeBlock)getBlockState().getBlock()).getTier())) / ((UpgradeBlock)getBlockState().getBlock()).getTier());
+
+                if (cooldownTicks != 0)
+                    ticksRunning = 0;
+                cooldown = cooldownTicks;
             }
         }
         else
@@ -201,6 +228,11 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
         {
             transferFluidToTank();
         }
+    }
+
+    public void setFluid(FluidStack fluidStack)
+    {
+        tank.setFluid(fluidStack);
     }
 
     private boolean hasFluid()
@@ -249,6 +281,14 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
         //return initial ? (EnergyRequirement <= EnergyStorage.getEnergyStored()) : (EnergyRequirement / maxProgress <= EnergyStorage.getEnergyStored());
     }
 
+    public void upgrade(BlockState state)
+    {
+        state = state.setValue(UpgradeBlock.TIER, state.getValue(UpgradeBlock.TIER) + 1);
+        level.setBlockAndUpdate(worldPosition, state);
+        setChanged(level, getBlockPos(), getBlockState());
+        System.out.println("Tier: " + getBlockState().getValue(UpgradeBlock.TIER));
+    }
+
     private boolean hasCooldown()
     {
         return cooldown > 0;
@@ -266,7 +306,10 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
 
         if (hasRecipe())
         {
-
+            tank.drain((int) recipe.get().getFluid().getAmount(), false);
+            inventory.shrinkSlot(1, 1, false);
+            inventory.setSlot(2, new ItemStack(recipe.get().getResultItem().getItem(), inventory.getSlot(2).getCount() + 1));
+            progress = 0;
         }
     }
 
@@ -281,13 +324,48 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
         Optional<UpgradeBlockRecipe> recipe = lvl.getRecipeManager().getRecipeFor(UpgradeBlockRecipe.Type.INSTANCE, inv, lvl);
         if (recipe.isPresent())
         {
+            //if (recipe.get().getEnergyOutput() > energyStorage.getEnergyStored())
+            //{
+            //    return false;
+            //}
+            if (recipe.get().getFluid().getAmount() > tank.getFluid().getAmount())
+            {
+                return false;
+            }
             EnergyRequirement = recipe.get().getEnergyOutput();
             maxProgress = recipe.get().getHardness();
             methodReason = recipe.get().getMethod();
             EnergyRequirement = recipe.get().getEnergyOutput() * maxProgress;
             // Sync Mod Messages
+            sendMethodReasonPacket(15);
+        }
+        else if (inv.getItem(0).getItem() == ModBlocks.UPGRADE_BLOCK.item.get())
+        {
+            if (inv.getItem(0).getItem() instanceof BlockItem blockItem)
+            {
+                Block block = blockItem.getBlock();
+
+                if (block instanceof UpgradeBlock upgradeBlock)
+                {
+                    EnergyRequirement = 32 * upgradeBlock.getTier();
+                    maxProgress = 100 * upgradeBlock.getTier();
+                    methodReason = "darkvslight.upgrade_block.upgrading";
+                    // Sync Mod Messages
+                    sendMethodReasonPacket(15);
+                    return upgradeBlock.getTier() < 5 && canInsert(inv) && canOutput(inv, new ItemStack(ModBlocks.UPGRADE_BLOCK.item.get()));
+                }
+            }
         }
         return recipe.isPresent() && canInsert(inv) && canOutput(inv, recipe.get().getResultItem());
+    }
+
+    protected void sendMethodReasonPacket(int radius)
+    {
+        MethodReasonS2CPacket packet = new MethodReasonS2CPacket(methodReason, getBlockPos());
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        packet.encode(buf);
+        Iterable<ServerPlayer> players = level.getEntitiesOfClass(ServerPlayer.class, new AABB(getBlockPos()).inflate(radius));
+        NetworkManager.sendToPlayers(players, ModPackets.SYNC_METHOD_REASON, buf);
     }
 
     private boolean canInsert(SimpleContainer inv)
@@ -307,7 +385,8 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
         inventory.deserialize(tag.getCompound("inventory"));
         progress = tag.getInt("upgrade_block.upgrading");
         //energyStorage.read(tag);
-        FluidStack.read(tag.getCompound("fluid"));
+        JsonObject json = JsonParser.parseString(tag.getString("fluid")).getAsJsonObject();
+        tank.setFluid(FluidJsonUtil.readFluid(json));
     }
 
     @Override
@@ -317,7 +396,7 @@ public class UpgradeBlockEntity extends BlockEntity implements MenuProvider
         tag.putInt("upgrade_block.upgrading", progress);
         //energyStorage.write(tag);
         FluidStack stack = tank.getFluid();
-        tag.put("fluid", stack.write(new CompoundTag()));
+        tag.putString("fluid", FluidJsonUtil.toJson(stack).toString());
         super.saveAdditional(tag);
     }
 

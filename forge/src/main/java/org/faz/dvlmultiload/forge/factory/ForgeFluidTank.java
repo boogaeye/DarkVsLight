@@ -58,8 +58,9 @@ public class ForgeFluidTank implements IFluidTank
     }
 
     @Override
-    public int drain(int amount, boolean simulate) {
-        return 0;
+    public int drain(int amount, boolean simulate)
+    {
+        return tank.drain(amount, (simulate ? IFluidHandler.FluidAction.SIMULATE : IFluidHandler.FluidAction.EXECUTE)).getAmount();
     }
 
     @Override

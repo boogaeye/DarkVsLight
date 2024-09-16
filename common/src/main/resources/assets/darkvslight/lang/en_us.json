@@ -1,18 +1,28 @@
 {
   "death.attack.Darkend": "%1$s was eaten by the dark",
+
   "block.darkvslight.dark_stone": "Dark Stone",
   "block.darkvslight.startile_ore": "Startile Ore",
   "item.darkvslight.startilegem": "Startile Gem",
   "item.darkvslight.rawstartile": "Raw Startile",
-  "config.jade.plugin_darkvslight.upgrade_block": "Test",
+
   "darkvslight.upgrade": "Upgrade Progress: %d ticks",
   "text.betterf3.line.darkend": "Darkend: %d",
+
   "darkvslight.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "darkvslight.tooltip.liquid.amount": "%s mB",
+
   "darkvslight.upgrade_block.idle": "Waiting for Input",
   "darkvslight.upgrade_block.NAMR": "NOT A METHOD REASON",
   "darkvslight.upgrade_block.smelting": "Smelting...",
   "darkvslight.upgrade_block.warmsmelting": "Boil Smelting...",
   "darkvslight.upgrade_block.crystallize": "Crystallizing....",
-  "darkvslight.upgrade_block.noenergy": "Insufficient Energy"
+  "darkvslight.upgrade_block.noenergy": "Insufficient Energy",
+  "darkvslight.upgrade_block.nofluid": "Insufficient Fluid",
+
+  "darkvslight.bookdarkend.title": "The Liber Tenebrarum",
+  "darkvslight.bookdarkend.desc": "Let the darkness consume you...",
+  "darkvslight.bookdarkend.surface_dark.title": "The Surface Dark Dimension",
+  "darkvslight.bookdarkend.entering_dimension.title": "Entering the Darkend Dimension",
+  "darkvslight.bookdarkend.entering_dimension.desc": "???"
 }
