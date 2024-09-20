@@ -19,6 +19,7 @@ public class ModBlockTags extends BlockTagsProvider
         tag(ModTags.Blocks.DARKEND_PORTAL_FRAME_BLOCKS).add(ModBlocks.DARK_STONE.block.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.DARK_STONE.block.get()).add(ModBlocks.STARTILE_ORE.block.get()).add(ModBlocks.UPGRADE_BLOCK.block.get());
         tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.UPGRADE_BLOCK.block.get());
+        tag(BlockTags.CLIMBABLE).add(ModBlocks.GLOWING_FRUIT.block.get());
         //tag(ModTags.Blocks.NEEDS_BLIND_TOOL).add(ModBlocks.StartileOre.get());
     }
 }

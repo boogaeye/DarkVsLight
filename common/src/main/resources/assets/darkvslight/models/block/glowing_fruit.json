@@ -1,7 +1,7 @@
 {
-  "parent": "block/crop",
+  "parent": "block/cross",
   "textures": {
-    "crop": "darkvslight:block/glowingfruit",
+    "cross": "darkvslight:block/glowingfruit",
     "particle": "darkvslight:block/glowingfruit"
   }
 }

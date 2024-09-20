@@ -1,6 +1,7 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
+
 architectury {
     platformSetupLoomIde()
     forge()
@@ -26,6 +27,7 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
+    modApi "vazkii.patchouli:Patchouli:1.19.2-77:api"
     modImplementation "vazkii.patchouli:Patchouli:1.19.2-77"
 }
 

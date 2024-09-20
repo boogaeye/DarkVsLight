@@ -1,0 +1,11 @@
+{
+  "name": "The Surface Dark",
+  "icon": "minecraft:diamond",
+  "category": "darkvslight:entering_dimension",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Scratching the surface...$(br2)The Surface Dark is a Dimension that is a dark and corrupted version of the Overworld. The Surface Dark is where darkness will actually damage you but, a habitable zone nonetheless."
+    }
+  ]
+}

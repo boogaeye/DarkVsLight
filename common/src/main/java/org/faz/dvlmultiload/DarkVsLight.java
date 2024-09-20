@@ -23,7 +23,17 @@ public class DarkVsLight
 		ModSounds.init();
 		ModRecipes.init();
 		ModPackets.init();
+		ModTreeDecors.init();
+		ModPois.init();
 		System.out.println("DarkVsLight mod loaded!");
+	}
+
+	public static void common()
+	{
+		System.out.println("Loading DarkVsLight common...");
+		ModFeatures.init();
+
+		System.out.println("DarkVsLight common loaded!");
 	}
 
 	public static void client(Minecraft minecraft)

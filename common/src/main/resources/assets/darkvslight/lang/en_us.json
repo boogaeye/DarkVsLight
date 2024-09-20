@@ -21,8 +21,5 @@
   "darkvslight.upgrade_block.nofluid": "Insufficient Fluid",
 
   "darkvslight.bookdarkend.title": "The Liber Tenebrarum",
-  "darkvslight.bookdarkend.desc": "Let the darkness consume you...",
-  "darkvslight.bookdarkend.surface_dark.title": "The Surface Dark Dimension",
-  "darkvslight.bookdarkend.entering_dimension.title": "Entering the Darkend Dimension",
-  "darkvslight.bookdarkend.entering_dimension.desc": "???"
+  "darkvslight.bookdarkend.desc": "Let the darkness consume you..."
 }

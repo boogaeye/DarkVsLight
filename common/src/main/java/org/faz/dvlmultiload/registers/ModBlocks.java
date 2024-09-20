@@ -2,9 +2,11 @@ package org.faz.dvlmultiload.registers;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import joptsimple.internal.AbbreviationMap;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -13,6 +15,8 @@ import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.material.Material;
 import org.faz.dvlmultiload.DarkVsLight;
+import org.faz.dvlmultiload.block.ClimbableBlock;
+import org.faz.dvlmultiload.block.DarkendPortalBlock;
 import org.faz.dvlmultiload.block.UpgradeBlock;
 import org.faz.dvlmultiload.registers.customaddons.DoubleRegister;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +54,7 @@ public class ModBlocks
 
     // Glow Stuff Rename!!!! LEGACY
     public static final DoubleRegister<Block, BlockItem> GLOW_LOG = DoubleRegister.createItemFromBlock("glow_log", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD)));
-    public static final DoubleRegister<Block, BlockItem> GLOW_LEAVES = DoubleRegister.createItemFromBlock("glow_leaves", () -> new Block(Block.Properties.of(Material.PLANT)));
+    public static final DoubleRegister<Block, BlockItem> GLOW_LEAVES = DoubleRegister.createItemFromBlock("glow_leaves", () -> new Block(Block.Properties.of(Material.PLANT).noOcclusion()));
     public static final DoubleRegister<Block, BlockItem> GLOW_PLANKS = DoubleRegister.createItemFromBlock("glow_planks", () -> new Block(Block.Properties.of(Material.WOOD)));
     public static final DoubleRegister<Block, BlockItem> GLOW_SAPLING = DoubleRegister.createItemFromBlock("glow_sapling", () -> new SaplingBlock(new AbstractMegaTreeGrower() {
         @Nullable
@@ -66,7 +70,7 @@ public class ModBlocks
         }
     }, Block.Properties.of(Material.STONE).requiresCorrectToolForDrops())); // implement sapling
 
-    public static final DoubleRegister<Block, BlockItem> GLOWING_FRUIT = DoubleRegister.createItemFromBlock("glowing_fruit", () -> new Block(Block.Properties.of(Material.PLANT)));
+    public static final DoubleRegister<Block, BlockItem> GLOWING_FRUIT = DoubleRegister.createItemFromBlock("glowing_fruit", () -> new ClimbableBlock(0.2f, SoundEvents.GRASS_STEP, Block.Properties.of(Material.PLANT).noOcclusion().instabreak().lightLevel((state) -> 15).noCollission().sound(SoundType.CROP)));
 
     public static final DoubleRegister<Block, BlockItem> GLOW_LOG_DOOR = DoubleRegister.createItemFromBlock("glow_log_door", () -> new DoorBlock(Block.Properties.of(Material.WOOD)));
     public static final DoubleRegister<Block, BlockItem> GLOW_BERRY_BUSH = DoubleRegister.createItemFromBlock("glow_berry_bush", () -> new Block(Block.Properties.of(Material.WOOD)));
@@ -83,6 +87,7 @@ public class ModBlocks
 
     // MISC no rework
     public static final DoubleRegister<Block, BlockItem> OBSCURATUS_SAND = DoubleRegister.createItemFromBlock("obscuratus_sand", () -> new SandBlock(0, Block.Properties.of(Material.SAND)));
+    public static final RegistrySupplier<Block> DARKEND_PORTAL = BLOCKS.register("darkend_portal", DarkendPortalBlock::new);
     //
 
     public static void init()

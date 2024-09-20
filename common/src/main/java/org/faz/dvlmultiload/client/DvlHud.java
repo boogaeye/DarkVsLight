@@ -33,7 +33,7 @@ public class DvlHud
         RenderSystem.setShader(GameRenderer::getPositionShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, LIGHT_GAUGE);
-        GuiComponent.blit(poseStack, 9, y - 30, 90 - (Math.min((lightLevel / 2), 6) * 15), 0, 15, 15, 112, 16);
+        GuiComponent.blit(poseStack, 9, y - 45, 90 - (Math.min((lightLevel / 2), 6) * 15), 0, 15, 15, 112, 16);
         RenderSystem.setShaderTexture(0, EMPTY_DARKEND);
         for (int i = 0; i < 10; i++){
             GuiComponent.blit(poseStack, 9 + (i * 9), y - 18, 0, 0, 9, 9, 9, 9);

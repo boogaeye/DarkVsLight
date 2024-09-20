@@ -1,28 +1,17 @@
 {
   "variants": {
-    "facing=south": {
-      "model": "darkvslight:block/glow_log"
-    },
-    "facing=north": {
-      "model": "darkvslight:block/glow_log"
-    },
-    "facing=east": {
-      "model": "darkvslight:block/glow_log",
-      "x": 90
-    },
-    "facing=west": {
-      "model": "darkvslight:block/glow_log",
-      "x": 90
-    },
-    "facing=up": {
+    "axis=x": {
       "model": "darkvslight:block/glow_log",
       "x": 90,
       "y": 90
     },
-    "facing=down": {
+    "axis=y": {
       "model": "darkvslight:block/glow_log",
-      "x": 90,
-      "y": 90
+      "x": 0
+    },
+    "axis=z": {
+      "model": "darkvslight:block/glow_log",
+      "x": 90
     }
   }
 }
